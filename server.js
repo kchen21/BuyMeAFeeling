@@ -27,6 +27,10 @@ app.get('/', function(req, res) {
   res.render('home');
 });
 
+app.get('/about', function(req, res) {
+  res.render('about');
+});
+
 app.post('/create-user', function(req, res, next) {
   var user = new User();
 
