@@ -1,12 +1,16 @@
 var router = require('express').Router();
 var User = require('../models/user');
 
+router.get('/signup', function(req, res, next) {
+  res.render('accounts/signup');
+});
+
 router.post('/signup', function(req, res, next) {
   var user = new User;
 
   user.profile.name = req.body.name;
-  user.password = req.body.password;
   user.email = req.body.email;
+  user.password = req.body.password;
 
   User.findOne({ email: req.body.email }, function(err, existingUser) {
 
