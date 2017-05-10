@@ -17,6 +17,7 @@ mongoose.connect('mongodb://root:cheers21@ds133388.mlab.com:33388/buy_me_a_feeli
   }
 });
 
+app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
