@@ -2,6 +2,8 @@ var express = require('express');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var ejs = require('ejs');
+var engine = require('ejs-mate');
 
 var User = require('./models/user');
 
@@ -18,10 +20,11 @@ mongoose.connect('mongodb://root:cheers21@ds133388.mlab.com:33388/buy_me_a_feeli
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.engine('ejs', engine);
+app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-  var name = "Ken";
-  res.json("My name is " + name);
+  res.render('home');
 });
 
 app.post('/create-user', function(req, res, next) {
@@ -32,7 +35,7 @@ app.post('/create-user', function(req, res, next) {
   user.email = req.body.email;
 
   user.save(function(err) {
-    if (err) next(err);
+    if (err) return next(err);
 
     res.json("Successfully created a new user");
   });
