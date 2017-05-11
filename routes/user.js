@@ -15,7 +15,10 @@ router.post('/login', passport.authenticate('local-login', {
 }));
 
 router.get('/profile', function(req, res) {
-  res.json(req.user);
+  User.findOne({ _id: req.user._id }, function(err, user) {
+    if (err) return next(err);
+    res.render('accounts/profile', { user: user });
+  });
 });
 
 router.get('/signup', function(req, res, next) {
