@@ -1,8 +1,8 @@
-var router = require('express').Router;
+var router = require('express').Router();
 var async = require('async');
 var faker = require('faker');
-var Category = require('../model/category');
-var Product = require('../model/product');
+var Category = require('../models/category');
+var Product = require('../models/product');
 
 router.get('/:name', function(req, res, next) {
 
@@ -10,7 +10,7 @@ router.get('/:name', function(req, res, next) {
 
     function(callback) {
       Category.findOne({ name: req.params.name }, function(err, category) {
-        if (err) retrn next(err);
+        if (err) return next(err);
         callback(null, category);
       });
     },
@@ -32,3 +32,5 @@ router.get('/:name', function(req, res, next) {
   res.json({ message: 'Success' })
 
 });
+
+module.exports = router;
