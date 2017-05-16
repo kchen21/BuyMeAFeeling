@@ -40,7 +40,7 @@ router.get('/search', function(req, res, next) {
         return hit;
       });
 
-      res.render('main/search-result', {
+      res.render('main/search-results', {
         query: req.query.q,
         data: data
       });
