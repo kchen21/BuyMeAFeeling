@@ -48,8 +48,31 @@ router.get('/search', function(req, res, next) {
   }
 });
 
-router.get('/', function(req, res) {
-  res.render('main/home');
+router.get('/', function(req, res, next) {
+
+  if (req.user) {
+    var perPage = 9;
+    var page = req.params.page;
+
+    Product
+      .find()
+      .skip(perPage * (page - 1))
+      .limit( perPage )
+      .populate('category')
+      .exec(function(err, products) {
+        if (err) return next(err);
+        Product.count().exec(function(err, count) {
+          if (err) return next(err);
+          res.render('main/product-main', {
+            products: products,
+            pages: count / perPage
+          });
+        });
+      });
+  } else {
+    res.render('main/home');
+  }
+
 });
 
 router.get('/about', function(req, res) {
