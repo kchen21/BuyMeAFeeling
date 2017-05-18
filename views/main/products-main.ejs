@@ -5,14 +5,14 @@
     <h1 class="text-center">Buy Me A Feeling</h1>
     <p class="text-center">Find your favorite feeling</p>
     <form class="text-center">
-      <input type="text" class="span6" style="margin-bottom: 0; font-size: 17.5px; height: 34px;" name="search_string" placeholder="Search for a feeling...">
+      <input type="text" id="search" class="span6" style="margin-bottom: 0; font-size: 17.5px; height: 34px;" name="search_string" placeholder="Search for a feeling...">
       <button type="submit" class="btn btn-large"><i class="icon-search"></i></button>
     </form>
   </div>
 </div>
 
 <div class="container">
-  <div class="row">
+  <div class="row" id="search-results">
     <% for (var i = 0; i < products.length; i++) { %>
       <div class="span4">
         <a href="/product/<%= products[i]._id %>">
