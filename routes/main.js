@@ -50,7 +50,7 @@ stream.on('error', function(err) {
 router.post('/product/:product_id', function(req, res, next) {
   Cart.findOne({ owner: req.user._id }, function(err, cart) {
     cart.items.push({
-      item: req.params.product_id,
+      item: req.body.product_id,
       price: parseFloat(req.body.priceValue),
       quantity: parseInt(req.body.quantity)
     });
