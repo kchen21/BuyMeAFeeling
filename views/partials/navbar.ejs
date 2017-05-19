@@ -10,35 +10,47 @@
         </div>
       </form>
 
-      <ul class="nav pull-right">
+      <div class="pull-right">
 
-        <% if (!user) { %>
-        <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Signup / Login</a>
-          <ul class="dropdown-menu">
-            <li><a href="/signup">Signup</a></li>
-            <li><a href="/login">Login</a></li>
-          </ul>
-        </li>
-        <% } else { %>
-        <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= user.profile.name %></a>
-          <ul class="dropdown-menu">
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/logout">Logout</a></li>
-          </ul>
-        </li>
-        <% } %>
-      </ul>
-
-      <ul class="nav pull-right">
-        <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories</a>
-          <ul class="dropdown-menu">
-            <% for (var i = 0; i < categories.length; i++) { %>
-              <li><a href="/products/<%= categories[i]._id %>"><%= categories[i].name %></a></li>
+        <ul class="nav">
+          <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories</a>
+            <ul class="dropdown-menu">
+              <% for (var i = 0; i < categories.length; i++) { %>
+                <li><a href="/products/<%= categories[i]._id %>"><%= categories[i].name %></a></li>
               <% } %>
             </ul>
           </li>
         </ul>
 
+        <ul class="nav">
+
+          <% if (!user) { %>
+            <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Signup / Login</a>
+              <ul class="dropdown-menu">
+                <li><a href="/signup">Signup</a></li>
+                <li><a href="/login">Login</a></li>
+              </ul>
+            </li>
+          <% } else { %>
+            <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= user.profile.name %></a>
+              <ul class="dropdown-menu">
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </li>
+          <% } %>
+        </ul>
+
+        <ul class="nav">
+
+          <% if (user) { %>
+            <li><a href="/cart">Cart: <span class="badge"><%= cartItemTotal %></span></a></li>
+          <% } else { %>
+            <li><a href="/cart">Cart: <span class="badge">0</span></a></li>
+          <% } %>
+        </ul>
+
+      </div>
     </div>
   </div>
 </div>
