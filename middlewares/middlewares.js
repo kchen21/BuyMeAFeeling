@@ -11,9 +11,9 @@ module.exports = function(req, res, next) {
           total += cart.items[i].quantity;
         }
 
-        res.locals.cartTotal = total;
+        res.locals.cartItemTotal = total;
       } else {
-        res.locals.cartTotal = 0;
+        res.locals.cartItemTotal = 0;
       }
 
       next();
