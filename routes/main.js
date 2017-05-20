@@ -77,6 +77,19 @@ router.post('/product/:product_id', function(req, res, next) {
   });
 });
 
+router.post('/remove', function(req, res, next) {
+  Cart.findOne({ owner: req.user._id }, function(err, cart) {
+    cart.items.pull(String(req.body.item));
+
+    cart.total = (cart.total - parseFloat(req.body.price)).toFixed(2);
+    cart.save(function(err, foundCart) {
+      if (err) return next(err);
+      req.flash('remove', "Successfully removed item from cart");
+      res.redirect('/cart');
+    });
+  });
+});
+
 router.post('/search', function(req, res, next) {
   res.redirect('/search?q=' + req.body.q);
 });
