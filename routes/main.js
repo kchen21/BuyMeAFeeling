@@ -55,7 +55,8 @@ router.get('/cart', function(req, res, next) {
     .exec(function(err, cart) {
       if (err) return next(err);
       res.render(('main/cart'), {
-        foundCart: cart
+        foundCart: cart,
+        message: req.flash('remove')
       });
     });
 });
