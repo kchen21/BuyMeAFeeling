@@ -2,7 +2,7 @@ var router = require('express').Router();
 var Product = require('../models/product');
 var Cart = require('../models/cart');
 
-var stripe = require('stripe')('sk_test_cFRChEh9xH81h7HyhEdwSCk6');
+var stripe = require('stripe') ('sk_test_cFRChEh9xH81h7HyhEdwSCk6');
 
 function paginate(req, res, next) {
   var perPage = 9;
@@ -166,6 +166,8 @@ router.post('/payment', function(req, res, next) {
       customer: customer.id
     });
   });
+
+  res.redirect('/profile');
 });
 
 module.exports = router;
