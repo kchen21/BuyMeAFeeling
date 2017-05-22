@@ -1,4 +1,5 @@
 var router = require('express').Router();
+var User = require('../models/user');
 var Product = require('../models/product');
 var Cart = require('../models/cart');
 
@@ -168,7 +169,7 @@ router.post('/payment', function(req, res, next) {
       customer: customer.id
     });
   }).then(function(charge) {
-    sync.waterfall([
+    async.waterfall([
       function(callback) {
         Cart.findOne({ owner: req.user._id }, function(err, cart) {
           callback(err, cart);
