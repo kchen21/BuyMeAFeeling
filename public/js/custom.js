@@ -91,7 +91,7 @@ $(function() {
     }
   };
 
-  $('payment-form').submit(function(event) {
+  $('#payment-form').submit(function(event) {
     var $form = $(this);
 
     // Disable the submit button to prevent repeated clicks
