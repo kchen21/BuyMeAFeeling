@@ -2,6 +2,8 @@ var router = require('express').Router();
 var Product = require('../models/product');
 var Cart = require('../models/cart');
 
+var async = require('async');
+
 var stripe = require('stripe') ('sk_test_cFRChEh9xH81h7HyhEdwSCk6');
 
 function paginate(req, res, next) {
@@ -165,9 +167,39 @@ router.post('/payment', function(req, res, next) {
       currency: 'usd',
       customer: customer.id
     });
-  });
+  }).then(function(charge) {
+    sync.waterfall([
+      function(callback) {
+        Cart.findOne({ owner: req.user._id }, function(err, cart) {
+          callback(err, cart);
+        });
+      },
+      function(cart, callback) {
+        User.findOne({ _id: req.user._id }, function(err, user) {
+          if (user) {
+            for (var i = 0; i < cart.items.length; i++) {
+              user.history.push({
+                item: cart.items[i].item,
+                paid: cart.items[i].price
+              });
+            }
 
-  res.redirect('/profile');
+            user.save(function(err, user) {
+              if (err) return next(err);
+              callback(err, user);
+            });
+          }
+        });
+      },
+      function(user) {
+        Cart.update({ owner: user._id }, { $set: { items: [], total: 0 } }, function(err, updatedCart) {
+          if (updatedCart) {
+            res.redirect('/profile');
+          }
+        });
+      }
+    ]);
+  });
 });
 
 module.exports = router;
