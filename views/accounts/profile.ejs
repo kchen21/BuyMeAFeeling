@@ -5,31 +5,32 @@
     <div>
       <img class="img-circle" src="<%= user.profile.picture %>" alt="">
 
-      <br />
-      <p>Name: <%= user.profile.name %></p>
-      <p>Email: <%= user.email %></p>
+      <div style="margin: 16px 0;">
+        <p><span style="font-weight: bold;">Name:</span> <%= user.profile.name %></p>
+        <p><span style="font-weight: bold;">Email:</span> <%= user.email %></p>
 
-      <% if (user.address === "" || typeof user.address === 'undefined') { %>
+        <% if (user.address === "" || typeof user.address === 'undefined') { %>
 
-        <p>Address: <span style="color: #c0392b; font-weight: bold">You have no address</span></p>
+          <p><span style="font-weight: bold;">Address:</span> <span style="color: #c0392b; font-weight: bold">You have no address</span></p>
 
-      <% } else { %>
+        <% } else { %>
 
-        <p>Address: <%= user.address %></p>
+          <p>Address: <%= user.address %></p>
 
-      <% } %>
+        <% } %>
+      </div>
 
       <a href="/edit-profile" class="btn btn-primary">Edit Profile</a>
     </div>
 
-    <div class="span6 center" style="padding-top: 30px;">
+    <div class="span6 center" style="height: 300px; margin: 32px auto; border: 1px solid #ddd; border-radius: 4px; overflow-y: scroll;">
       <h2 class="text-center">History</h2>
 
       <table class="table table-striped sticky-header">
         <thead>
           <tr>
-            <th>Item's Name</th>
-            <th>Paid: </th>
+            <th>Item Name</th>
+            <th>Amount Paid</th>
           </tr>
           <tbody>
             <% for (var i = 0; i < foundUser.history.length; i++) { %>
