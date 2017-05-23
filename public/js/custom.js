@@ -46,8 +46,8 @@ $(function() {
         for (var i = 0; i < data.length; i++) {
           var html = "";
           html += '<div class="span4">';
-          html += '<a href="/product/' + data[i]._id + '>';
-          html += '<div class="thumbnail">';
+          html += '<a href="/product/' + data[i]._id + '">';
+          html += '<div class="thumbnail" style="margin: 8px 0;">';
           html += '<img src=' + data[i]._source.image + '>';
           html += '<div class="caption">';
           html += '<h3>' + data[i]._source.name + '</h3>';

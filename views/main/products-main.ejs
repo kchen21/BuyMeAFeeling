@@ -2,10 +2,10 @@
 
 <div class="hero-unit">
   <div class="container">
-    <h1 class="text-center">Buy Me A Feeling</h1>
-    <p class="text-center">Find your favorite feeling</p>
+    <h1 class="text-center">BuyMeAFeeling</h1>
+    <p class="text-center">Find your favorite feeling in the world</p>
     <div class="text-center">
-      <input type="text" id="search" class="span6" style="margin-bottom: 0; font-size: 17.5px; height: 34px;" name="search_string" placeholder="Search for a feeling...">
+      <input type="text" id="search" class="span6" style="margin-bottom: 0; font-size: 17.5px; height: 34px;" name="search_string" placeholder="Instasearch for a feeling...">
     </div>
   </div>
 </div>
@@ -15,7 +15,7 @@
     <% for (var i = 0; i < products.length; i++) { %>
       <div class="span4">
         <a href="/product/<%= products[i]._id %>">
-          <div class="thumbnail">
+          <div class="thumbnail" style="margin: 8px 0;">
             <img src="<%= products[i].image %>">
             <div class="caption">
               <h3><%= products[i].name %></h3>
