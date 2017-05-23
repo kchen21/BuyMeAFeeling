@@ -1,8 +1,8 @@
 <% layout('layout') -%>
 
 <div class="container">
-  <div class="row">
-    <div class="center">
+  <div class="row text-center center">
+    <div>
       <img class="img-circle" src="<%= user.profile.picture %>" alt="">
 
       <br />
@@ -20,6 +20,27 @@
       <% } %>
 
       <a href="/edit-profile" class="btn btn-primary">Edit Profile</a>
+    </div>
+
+    <div class="span6 center" style="padding-top: 30px;">
+      <h2 class="text-center">History</h2>
+
+      <table class="table table-striped sticky-header">
+        <thead>
+          <tr>
+            <th>Item's Name</th>
+            <th>Paid: </th>
+          </tr>
+          <tbody>
+            <% for (var i = 0; i < foundUser.history.length; i++) { %>
+              <tr>
+                <td><%= foundUser.history[i].item.name %></td>
+                <td>$<%= foundUser.history[i].paid %></td>
+              </tr>
+            <% } %>
+          </tbody>
+        </thead>
+      </table>
     </div>
   </div>
 </div>
