@@ -14,7 +14,7 @@
       <h1>$<%= product.price %></h1>
 
       <form method="post">
-        <div class="btn-group" role="group" aria-label="...">
+        <div class="btn-group" style="padding: 8px 0; role="group" aria-label="...">
           <input type="hidden" name="quantity" id="quantity" value="1">
           <button type="button" id="minus" class="btn btn-default">-</button>
           <button type="button" id="total" class="btn btn-default">1</button>
@@ -25,8 +25,7 @@
           <input type="hidden" name="product_id" value="<%= product._id %>">
           <input type="hidden" name="productOfOne" id="priceOfOne" value="<%= product.price %>">
 
-          <input type="text" name="item" class="form-control" value="<%= product.name %>">
-          <input type="text" name="priceValue" id="priceValue" class="form-control" value="<%= product.price %>">
+          <input type="text" name="priceValue" id="priceValue" class="form-control" value="<%= product.price %>" readonly>
         </div>
 
         <% if (user) { %>
