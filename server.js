@@ -18,6 +18,10 @@ var cartMiddleware = require('./middlewares/middlewares');
 
 var app = express();
 
+capitalize = function (str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
 mongoose.connect(secret.database, function(err) {
   if (err) {
     console.log(err);

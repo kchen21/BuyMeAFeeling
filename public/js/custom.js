@@ -51,7 +51,7 @@ $(function() {
           html += '<img src=' + data[i]._source.image + '>';
           html += '<div class="caption">';
           html += '<h3>' + data[i]._source.name + '</h3>';
-          // html += '<p>' + data[i]._source.category.name + '</p>';
+          // html += '<p>Category: ' + capitalize(data[i]._source.category.name) + '</p>';
           html += '<p>$' + data[i]._source.price +'</p>';
           html += '</div></div></a></div>';
 

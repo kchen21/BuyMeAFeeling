@@ -1,7 +1,7 @@
 <% layout('layout') -%>
 
 <div class="container">
-  <h1 class="text-center"><%= products[0].category.name %> feelings</h1>
+  <h1 class="text-center"><%= capitalize(products[0].category.name) %> Feelings</h1>
   <div class="row">
     <% for (var i = 0; i < products.length; i++) { %>
       <div class="span4">
@@ -10,7 +10,7 @@
             <img src="<%= products[i].image %>">
             <div class="caption">
               <h3><%= products[i].name %></h3>
-              <p><%= products[i].category.name %></p>
+              <p>Category: <%= capitalize(products[i].category.name) %></p>
               <p>$<%= products[i].price %></p>
             </div>
           </div>
