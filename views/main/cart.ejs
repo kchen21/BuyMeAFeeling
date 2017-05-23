@@ -13,6 +13,8 @@
         </div>
       <% } %>
 
+      <h1>Cart Items</h1>
+
       <% for (var i = 0; i < foundCart.items.length; i++) { %>
         <div class="row" style="margin: 12px 0; border: 1px solid #ddd; border-radius: 4px; padding: 8px 0;">
           <div class="span2">
@@ -20,12 +22,12 @@
           </div>
 
           <div class="span3" style="width: 278px;">
-            <p><%= foundCart.items[i].item.name %></p>
+            <p style="font-weight: bold;"><%= foundCart.items[i].item.name %></p>
           </div>
 
           <div class="span2">
-            <p><%= foundCart.items[i].quantity %></p>
-            <p>$<%= foundCart.items[i].price %></p>
+            <p>Quantity: <%= foundCart.items[i].quantity %></p>
+            <p>Price: $<%= foundCart.items[i].price %></p>
 
             <form method="post" action="/remove">
               <input type="hidden" name="item" value="<%= foundCart.items[i]._id %>">
@@ -39,9 +41,7 @@
 
     </div>
 
-    <div class="span2"></div>
-
-    <div class="span2" style="margin: 12px 0; border: 1px solid #ddd; border-radius: 4px; padding: 16px 0; text-align: center;">
+    <div class="span2" style="float: right; border: 1px solid #ddd; border-radius: 4px; padding: 16px; text-align: center;">
       <h4>Total: $<span class="totalPrice"><%= foundCart.total %></span></h4>
 
       <div class="form-group">
