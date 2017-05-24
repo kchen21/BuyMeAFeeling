@@ -1,88 +1,85 @@
-var path = require('path');
-var appDir = path.dirname(require.main.filename);
-
 productData = {
 
   positive: {
     affectionate: {
       name: 'affectionate',
       price: 5,
-      image: appDir + '/public/img/emojis/affectionate.png'
+      image: appRoot + '/public/img/emojis/affectionate.png'
     },
     angelic: {
       name: 'angelic',
       price: 2,
-      image: appDir + '/public/img/emojis/angelic.png'
+      image: appRoot + '/public/img/emojis/angelic.png'
     },
     confident: {
       name: 'confident',
       price: 3,
-      image: appDir + '/public/img/emojis/confident.png'
+      image: appRoot + '/public/img/emojis/confident.png'
     },
     cool: {
       name: 'cool',
       price: 6,
-      image: appDir + '/public/img/emojis/cool.png'
+      image: appRoot + '/public/img/emojis/cool.png'
     },
     devilish: {
       name: 'devilish',
       price: 8,
-      image: appDir + '/public/img/emojis/devilish.png'
+      image: appRoot + '/public/img/emojis/devilish.png'
     },
     engaged: {
       name: 'engaged',
       price: 1,
-      image: appDir + '/public/img/emojis/engaged.png'
+      image: appRoot + '/public/img/emojis/engaged.png'
     },
     excited: {
       name: 'excited',
       price: 2,
-      image: appDir + '/public/img/emojis/excited.png'
+      image: appRoot + '/public/img/emojis/excited.png'
     },
     flirtatious: {
       name: 'fliratatious',
       price: 5,
-      image: appDir + '/public/img/emojis/fliratatious.png'
+      image: appRoot + '/public/img/emojis/fliratatious.png'
     },
     happy: {
       name: 'happy',
       price: 7,
-      image: appDir + '/public/img/emojis/happy.png'
+      image: appRoot + '/public/img/emojis/happy.png'
     },
     nerdy: {
       name: 'nerdy',
       price: 9,
-      image: appDir + '/public/img/emojis/nerdy.png'
+      image: appRoot + '/public/img/emojis/nerdy.png'
     },
     relieved: {
       name: 'relieved',
       price: 2,
-      image: appDir + '/public/img/emojis/relieved.png'
+      image: appRoot + '/public/img/emojis/relieved.png'
     },
     satiated: {
       name: 'satiated',
       price: 1,
-      image: appDir + '/public/img/emojis/satiated.png'
+      image: appRoot + '/public/img/emojis/satiated.png'
     },
     silly: {
       name: 'silly',
       price: 8,
-      image: appDir + '/public/img/emojis/silly.png'
+      image: appRoot + '/public/img/emojis/silly.png'
     },
     smug: {
       name: 'smug',
       price: 5,
-      image: appDir + '/public/img/emojis/smug.png'
+      image: appRoot + '/public/img/emojis/smug.png'
     },
     warm: {
       name: 'warm',
       price: 3,
-      image: appDir + '/public/img/emojis/warm.png'
+      image: appRoot + '/public/img/emojis/warm.png'
     },
     worried: {
       name: 'worried',
       price: 1,
-      image: appDir + '/public/img/emojis/worried.png'
+      image: appRoot + '/public/img/emojis/worried.png'
     }
   },
 
@@ -90,72 +87,72 @@ productData = {
     angry: {
       name: 'angry',
       price: 2,
-      image: appDir + '/public/img/emojis/angry.png'
+      image: appRoot + '/public/img/emojis/angry.png'
     },
     bored: {
       name: 'bored',
       price: 6,
-      image: appDir + '/public/img/emojis/bored.png'
+      image: appRoot + '/public/img/emojis/bored.png'
     },
     confused: {
       name: 'confused',
       price: 3,
-      image: appDir + '/public/img/emojis/confused.png'
+      image: appRoot + '/public/img/emojis/confused.png'
     },
     despairing: {
       name: 'despairing',
       price: 5,
-      image: appDir + '/public/img/emojis/despairing.png'
+      image: appRoot + '/public/img/emojis/despairing.png'
     },
     disappointed: {
       name: 'disappointed',
       price: 7,
-      image: appDir + '/public/img/emojis/disappointed.png'
+      image: appRoot + '/public/img/emojis/disappointed.png'
     },
     dizzy: {
       name: 'dizzy',
       price: 4,
-      image: appDir + '/public/img/emojis/dizzy.png'
+      image: appRoot + '/public/img/emojis/dizzy.png'
     },
     exasperated: {
       name: 'exasperated',
       price: 2,
-      image: appDir + '/public/img/emojis/exasperated.png'
+      image: appRoot + '/public/img/emojis/exasperated.png'
     },
     horrified: {
       name: 'horrified',
       price: 1,
-      image: appDir + '/public/img/emojis/horrified.png'
+      image: appRoot + '/public/img/emojis/horrified.png'
     },
     hushed: {
       name: 'hushed',
       price: 5,
-      image: appDir + '/public/img/emojis/hushed.png'
+      image: appRoot + '/public/img/emojis/hushed.png'
     },
     nervous: {
       name: 'nervous',
       price: 8,
-      image: appDir + '/public/img/emojis/nervous.png'
+      image: appRoot + '/public/img/emojis/nervous.png'
     },
     remorseful: {
       name: 'remorseful',
       price: 9,
-      image: appDir + '/public/img/emojis/remorseful.png'
+      image: appRoot + '/public/img/emojis/remorseful.png'
     },
     sad: {
       name: 'sad',
       price: 7,
-      image: appDir + '/public/img/emojis/sad.png'
+      image: appRoot + '/public/img/emojis/sad.png'
     },
     sick: {
       name: 'sick',
       price: 4,
-      image: appDir + '/public/img/emojis/sick.png'
+      image: appRoot + '/public/img/emojis/sick.png'
     },
     unamused: {
       name: 'unamused',
       price: 3,
-      image: appDir + '/public/img/emojis/unamused.png'
+      image: appRoot + '/public/img/emojis/unamused.png'
     }
   },
 
@@ -163,22 +160,22 @@ productData = {
     neutral: {
       name: 'neutral',
       price: 5,
-      image: appDir + '/public/img/emojis/neutral.png'
+      image: appRoot + '/public/img/emojis/neutral.png'
     },
     speechless: {
       name: 'speechless',
       price: 8,
-      image: appDir + '/public/img/emojis/speechless.png'
+      image: appRoot + '/public/img/emojis/speechless.png'
     },
     starstruck: {
       name: 'starstruck',
       price: 1,
-      image: appDir + '/public/img/emojis/starstruck.png'
+      image: appRoot + '/public/img/emojis/starstruck.png'
     },
     surprised: {
       name: 'surprised',
       price: 9,
-      image: appDir + '/public/img/emojis/surprised.png'
+      image: appRoot + '/public/img/emojis/surprised.png'
     }
   }
 
