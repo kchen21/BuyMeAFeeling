@@ -39,7 +39,7 @@ productData = {
     flirtatious: {
       name: 'flirtatious',
       price: 5,
-      image: 'https://raw.githubusercontent.com/kchen21/BuyMeAFeeling/master/public/img/emojis/fliratatious.png'
+      image: 'https://raw.githubusercontent.com/kchen21/BuyMeAFeeling/master/public/img/emojis/flirtatious.png'
     },
     happy: {
       name: 'happy',
