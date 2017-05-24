@@ -28,7 +28,7 @@ router.get('/positive', function(req, res, next) {
 
     function(positiveCategory, callback) {
       for (var feeling in productData.positive) {
-        var feelingVal = productData.positive.feeling;
+        var feelingVal = productData.positive[feeling];
         var product = new Product();
         product.category = positiveCategory._id;
         product.name = feelingVal.name;
@@ -58,7 +58,7 @@ router.get('/negative', function(req, res, next) {
 
     function(negativeCategory, callback) {
       for (var feeling in productData.negative) {
-        var feelingVal = productData.negative.feeling;
+        var feelingVal = productData.negative[feeling];
         var product = new Product();
         product.category = negativeCategory._id;
         product.name = feelingVal.name;
@@ -88,7 +88,7 @@ router.get('/miscellaneous', function(req, res, next) {
 
     function(miscellaneousCategory, callback) {
       for (var feeling in productData.miscellaneous) {
-        var feelingVal = productData.miscellaneous.feeling;
+        var feelingVal = productData.miscellaneous[feeling];
         var product = new Product();
         product.category = miscellaneousCategory._id;
         product.name = feelingVal.name;
