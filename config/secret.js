@@ -7,6 +7,6 @@ module.exports = {
     clientID: process.env.FACEBOOK_ID || '716924128486474',
     clientSecret: process.env.FACEBOOK_SECRET || 'a52835379132f7a4bede93e5cd84103a',
     profileFields: ['emails', 'displayName'],
-    callbackURL: 'http://localhost:3000/auth/facebook/callback'
+    callbackURL: 'https://buy-me-a-feeling.herokuapp.com/auth/facebook/callback'
   }
 };
