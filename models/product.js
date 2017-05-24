@@ -11,7 +11,7 @@ var ProductSchema = new Schema({
 
 ProductSchema.plugin(mongoosastic, {
   hosts: [
-    'localhost:9200'
+    'https://jarm0u2v:iecfi9icqn7hq01h@myrtle-5586046.us-east-1.bonsaisearch.net'
   ]
 });
 
