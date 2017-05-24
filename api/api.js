@@ -28,11 +28,12 @@ router.get('/positive', function(req, res, next) {
 
     function(positiveCategory, callback) {
       for (var feeling in productData.positive) {
+        var feelingVal = productData.positive.feeling;
         var product = new Product();
         product.category = positiveCategory._id;
-        product.name = feeling.name;
-        product.price = feeling.price;
-        product.image = feeling.image;
+        product.name = feelingVal.name;
+        product.price = feelingVal.price;
+        product.image = feelingVal.image;
 
         product.save();
       }
@@ -57,11 +58,12 @@ router.get('/negative', function(req, res, next) {
 
     function(negativeCategory, callback) {
       for (var feeling in productData.negative) {
+        var feelingVal = productData.negative.feeling;
         var product = new Product();
         product.category = negativeCategory._id;
-        product.name = feeling.name;
-        product.price = feeling.price;
-        product.image = feeling.image;
+        product.name = feelingVal.name;
+        product.price = feelingVal.price;
+        product.image = feelingVal.image;
 
         product.save();
       }
@@ -86,11 +88,12 @@ router.get('/miscellaneous', function(req, res, next) {
 
     function(miscellaneousCategory, callback) {
       for (var feeling in productData.miscellaneous) {
+        var feelingVal = productData.miscellaneous.feeling;
         var product = new Product();
         product.category = miscellaneousCategory._id;
-        product.name = feeling.name;
-        product.price = feeling.price;
-        product.image = feeling.image;
+        product.name = feelingVal.name;
+        product.price = feelingVal.price;
+        product.image = feelingVal.image;
 
         product.save();
       }
