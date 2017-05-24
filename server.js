@@ -16,9 +16,6 @@ var Category = require('./models/category');
 
 var cartMiddleware = require('./middlewares/middlewares');
 
-var path = require('path');
-global.appRoot = path.resolve(__dirname);
-
 var app = express();
 
 capitalize = function (str) {
